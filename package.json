@@ -23,6 +23,7 @@
 		"@babel/preset-react": "^7.12.5",
 		"@wordpress/eslint-plugin": "^7.3.0",
 		"babel-loader": "^8.1.0",
+		"browser-sync": "^2.26.13",
 		"browser-sync-webpack-plugin": "^2.2.2",
 		"clean-webpack-plugin": "^3.0.0",
 		"cross-env": "^7.0.2",
