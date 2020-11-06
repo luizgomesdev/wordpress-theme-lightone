@@ -6,16 +6,16 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 // Paths
 const BUILD_DIR = path.resolve(__dirname, 'public')
-const IMG_DIR = path.resolve(__dirname, 'src/assets/img')
-const SCSS_DIR = path.resolve(__dirname, 'src/assets/sass')
-const JS_DIR = path.resolve(__dirname, 'src/assets/js')
+const IMG_DIR = path.resolve(__dirname, 'assets/img')
+const SCSS_DIR = path.resolve(__dirname, 'assets/sass')
+const JS_DIR = path.resolve(__dirname, 'assets/js')
 
 module.exports = (env, argv) => {
 	return {
-		context: path.resolve(__dirname, 'src'),
+		context: path.resolve(__dirname),
 
 		entry: {
-			index: [`${JS_DIR}/index.js`, `${SCSS_DIR}/index.scss`],
+			global: [`${JS_DIR}/global.js`, `${SCSS_DIR}/global.scss`],
 		},
 
 		output: {
@@ -71,7 +71,7 @@ module.exports = (env, argv) => {
 			}),
 			new BrowserSyncPlugin({
 				files: '**/*.php',
-				proxy: 'http://blog.dev.tangerino.com.br',
+				proxy: '',
 			}),
 		],
 
