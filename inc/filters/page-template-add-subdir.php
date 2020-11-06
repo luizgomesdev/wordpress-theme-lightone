@@ -1,27 +1,44 @@
 <?php
 
-// defining the sub-directory so that it can be easily accessed from elsewhere as well.
-define('PAGE_TEMPLATE_SUB_DIR', 'src/pages');
-function page_template_add_subdir($templates = array())
+function page_template_add_subdir()
 {
-    // Generally this doesn't happen, unless another plugin / theme does modifications
-    // of their own. In that case, it's better not to mess with it again with our code.
-    if (empty($templates) || !is_array($templates) || count($templates) < 3)
-        return $templates;
+    $id = get_queried_object_id();
+    $template = get_page_template_slug();
+    $pagename = get_query_var('pagename');
 
-    $page_tpl_idx = 0;
-    $cnt = count($templates);
-    if ($templates[0] === get_page_template_slug()) {
-        // if there is custom template, then our page-{slug}.php template is at the next index
-        $page_tpl_idx = 1;
+    if (!$pagename && $id) {
+        // If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object
+        $post = get_queried_object();
+        if ($post)
+            $pagename = $post->post_name;
     }
 
-    // the last one in $templates is page.php, so
-    // all but the last one in $templates starting from $page_tpl_idx will be moved to sub-directory
-    for ($i = $page_tpl_idx; $i < $cnt - 1; $i++) {
-        $templates[$i] = PAGE_TEMPLATE_SUB_DIR . '/' . $templates[$i];
-    }
+    $templates = array();
 
-    return $templates;
+    // if there's a custom template then still give that priority
+    if ($template && 0 === validate_file($template))
+        $templates[] = $template;
+
+    if ($pagename)
+        $templates[] = "pages/page-$pagename.php";
+    // change the default search for the page-$slug template to use our directory
+    // you could also look in the theme root directory either before or after this
+
+    if ($id)
+        $templates[] = "pages/page-$id.php";
+    $templates[] = 'page.php';
+
+    /* Don't call get_query_template again!!!
+       return get_query_template( 'page', $templates );
+       We also reproduce the key code of get_query_template() - we don't want to call it or we'll get stuck in a loop .
+       We can remove lines of code that we know won't apply for pages, leaving us with...
+    */
+
+    $template = locate_template($templates);
+
+    print_r($templates);
+
+    return $template;
 }
+
 add_filter('page_template_hierarchy', 'page_template_add_subdir');
