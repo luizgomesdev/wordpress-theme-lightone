@@ -1,10 +1,10 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/sass/global.scss":
-/*!*********************************!*\
-  !*** ./assets/sass/global.scss ***!
-  \*********************************/
+/***/ "./src/assets/sass/global.scss":
+/*!*************************************!*\
+  !*** ./src/assets/sass/global.scss ***!
+  \*************************************/
 /*! namespace exports */
 /*! exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
@@ -17,10 +17,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./assets/js/main.js":
-/*!***************************!*\
-  !*** ./assets/js/main.js ***!
-  \***************************/
+/***/ "./src/assets/js/main.js":
+/*!*******************************!*\
+  !*** ./src/assets/js/main.js ***!
+  \*******************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements:  */
 /***/ (function() {
@@ -69,8 +69,8 @@ console.log('Hellow World');
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__("./assets/js/main.js");
-/******/ 	__webpack_require__("./assets/sass/global.scss");
+/******/ 	__webpack_require__("./src/assets/js/main.js");
+/******/ 	__webpack_require__("./src/assets/sass/global.scss");
 /******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;
