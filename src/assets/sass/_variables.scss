@@ -1,0 +1,110 @@
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+
+// Colors
+$primary: #fc5001 !default;
+$primary-light: lighten($primary, 10%) !default;
+$primary-dark: darken($primary, 10%) !default;
+
+$black: #333333 !default;
+$black-light: lighten($black, 10%) !default;
+$black-dark: darken($black, 10%) !default;
+
+$white: #ffffff !default;
+$white-light: lighten($white, 10%) !default;
+$white-dark: darken($white, 10%) !default;
+
+$grey: #4d4d4d !default;
+$grey-light: lighten($grey, 10%) !default;
+$grey-dark: darken($grey, 10%) !default;
+
+$info: #17a2b8 !default;
+$info-light: lighten($info, 10%) !default;
+$info-dark: darken($info, 10%) !default;
+
+$success: #28a745 !default;
+$success-light: lighten($success, 10%) !default;
+$success-dark: darken($success, 10%) !default;
+
+$warning: #ffc107 !default;
+$warning-light: lighten($warning, 10%) !default;
+$warning-dark: darken($warning, 10%) !default;
+
+$danger: #dc3545 !default;
+$danger-light: lighten($danger, 10%) !default;
+$danger-dark: darken($danger, 10%) !default;
+
+// Social Colors
+
+$facebook: #3c599f !default;
+$instagram: #a1755c !default;
+$linkedin: #0085ae !default;
+$twitter: #32ccfe !default;
+$whatsapp: #25d366 !default;
+$youtube: #c52f30 !default;
+$google: #cf3d2e !default;
+
+// Typography
+
+$family-sans-serif: 'Roboto', sans-serif;
+$family-monospace: monospace !default;
+$render-mode: optimizeLegibility !default;
+
+$size-1: 3rem !default;
+$size-2: 2.5rem !default;
+$size-3: 2rem !default;
+$size-4: 1.5rem !default;
+$size-5: 1.25rem !default;
+$size-6: 1.125rem !default;
+$size-7: 0.75rem !default;
+
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+$weight-black: 900 !default;
+
+// Spacing
+
+$block-spacing: 1.5rem !default;
+
+// Containers
+
+$gap: 32px !default; // The container horizontal gap, which acts as the offset for breakpoints
+$tablet: 769px !default; // 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$desktop: 960px + (2 * $gap) !default; // 960px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default; // 1152px container + 4rem
+$widescreen-enabled: true !default;
+$fullhd: 1344px + (2 * $gap) !default; // 1344px container + 4rem
+$fullhd-enabled: true !default;
+
+// Miscellaneous
+
+$easing: ease-out !default;
+$radius-small: 2px !default;
+$radius: 4px !default;
+$radius-large: 6px !default;
+$radius-rounded: 290486px !default;
+$speed: 86ms !default;
+
+// Layouts
+
+$section-padding: 3rem 1.5rem !default;
+$section-padding-medium: 6rem 1.5rem !default;
+$section-padding-large: 12rem 1.5rem !default;
+
+// Container
+$container-small: 540px;
+$container-medium: 720px;
+$container-large: 960px;
+$container-extra-large: 1200px;
+
+// Content
+
+$content-front-family: 'Montserrat', sans-serif;
+$content-heading-color: $black !default;
+$content-heading-weight: 500 !default;
+$content-heading-line-height: 1.2 !default;
+$content-pre-padding: 1.25em 1.5em !default;

@@ -1,0 +1,37 @@
+@use "variables";
+
+h1 {
+	font-size: variables.$size-1;
+}
+h2 {
+	font-size: variables.$size-2;
+}
+h3 {
+	font-size: variables.$size-3;
+}
+h4 {
+	font-size: variables.$size-4;
+}
+h5 {
+	font-size: variables.$size-5;
+}
+h6 {
+	font-size: variables.$size-6;
+}
+p {
+	font-size: variables.$size-6;
+	line-height: 2;
+	margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-weight: variables.$weight-semibold;
+    margin-bottom: 2rem;
+	line-height: 1.4;
+}

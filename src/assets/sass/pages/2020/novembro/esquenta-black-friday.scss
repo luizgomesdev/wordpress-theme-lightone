@@ -1,0 +1,110 @@
+@use '../../../variables';
+@use '../../../media-queries';
+
+@use '../../../theme/buttons.scss';
+@use '../../../theme/images.scss';
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	.column {
+		flex: auto;
+		padding: (variables.$gap / 2);
+
+		@include media-queries.mediumDevices {
+			flex: 1 1 0;
+
+			&.is-6 {
+				width: 50%;
+				flex: none;
+			}
+		}
+	}
+}
+
+header {
+	background-image: url('../../../../img/2020/novembro/background-esquenta-black-week.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
+	color: variables.$white;
+
+	position: relative;
+
+	@include media-queries.smallDevices {
+		padding-bottom: 150px;
+	}
+
+	@include media-queries.mediumDevices {
+		padding-bottom: 250px;
+	}
+
+	.row {
+		align-items: center;
+	}
+}
+
+.tangerino-video {
+	position: absolute;
+	left: 0;
+	right: 0;
+
+	@include media-queries.smallDevices {
+		bottom: -200px;
+	}
+
+	@include media-queries.mediumDevices {
+		bottom: -300px;
+	}
+
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 960px;
+	padding: 32px;
+
+	iframe {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+}
+.action-section {
+	.row {
+		justify-content: center;
+		text-align: center;
+	}
+	@include media-queries.smallDevices {
+		margin-top: 150px;
+	}
+
+	@include media-queries.mediumDevices {
+		margin-top: 250px;
+	}
+}
+
+.partners-logo {
+	max-width: 175px;
+}
+section#rd-section-joq3m2m5c {
+	background-color: transparent;
+}
+#form-formulario-esquenta-black-week-a211bbbf3a610c2dcc22 {
+	padding: 0;
+}
+.card {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	padding: 2rem;
+	height: 100%;
+	border-radius: 1rem;
+
+	.card-header {
+		min-height: 96px;
+		display: flex;
+		align-items: center;
+	}
+	.card-title {
+		font-weight: bold;
+	}
+}

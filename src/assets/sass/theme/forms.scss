@@ -1,0 +1,161 @@
+form {
+	margin: 0 auto;
+	.field {
+		position: relative;
+		margin-bottom: 1rem;
+		.label {
+			position: absolute;
+			top: 50%;
+			left: 3rem;
+
+			background-color: $white;
+			color: $grey;
+
+			margin-bottom: 0rem;
+
+			transform: translateY(-50%);
+			transition: all ease-in-out 0.2s;
+
+			z-index: 1024;
+			pointer-events: none;
+		}
+		.control {
+			&.has-icons-left {
+				.icon {
+					width: 3.5rem;
+					height: 3.5rem;
+					color: $grey;
+				}
+			}
+
+			input {
+				&:-webkit-autofill,
+				&:-webkit-autofill:hover,
+				&:-webkit-autofill:focus,
+				&:-webkit-autofill:active {
+					-webkit-box-shadow: 0 0 0 30px white inset !important;
+				}
+				& ~ {
+					.icon {
+						&.is-right {
+							cursor: pointer;
+							pointer-events: visible;
+						}
+					}
+				}
+			}
+			input,
+			select {
+				height: 3.5rem;
+				width: 100%;
+				border: 2px solid $grey;
+				border-radius: 4rem;
+				color: $grey;
+				font-weight: bold;
+
+				&.is-invalid {
+					border-color: $danger;
+					& ~ {
+						.icon {
+							color: $danger !important;
+						}
+						.label {
+							top: 0;
+							left: 2.25rem;
+
+							font-size: 0.875rem;
+							color: $danger;
+
+							padding: 0rem 0.5rem;
+						}
+					}
+				}
+
+				&:focus {
+					border-color: $primary;
+					box-shadow: none;
+					& ~ {
+						.icon {
+							color: $primary !important;
+						}
+						.label {
+							top: 0;
+							left: 2.25rem;
+
+							font-size: 0.875rem;
+							color: $primary;
+
+							padding: 0rem 0.5rem;
+						}
+					}
+				}
+				&:valid {
+					&:not([attribute='disabled']) {
+						& ~ {
+							.icon {
+								color: $primary;
+							}
+							.label {
+								top: 0;
+								left: 2.25rem;
+
+								font-size: 0.875rem;
+
+								padding: 0rem 0.5rem;
+							}
+						}
+					}
+				}
+
+				&:not(:placeholder-shown) {
+					&:invalid {
+						border-color: $danger;
+						& ~ {
+							.icon {
+								color: $danger !important;
+							}
+							.label {
+								top: 0;
+								left: 2.25rem;
+
+								font-size: 0.875rem;
+								color: $danger;
+
+								padding: 0rem 0.5rem;
+							}
+						}
+					}
+				}
+
+				&[type='checkbox'] {
+					width: 1.5rem;
+					height: 1.5rem;
+					position: absolute;
+					cursor: pointer;
+
+					& ~ label {
+						margin-left: 2.5rem;
+					}
+				}
+			}
+			.select {
+				height: 100%;
+				&::after {
+					border-color: $primary;
+				}
+			}
+		}
+	}
+
+	a {
+		background-color: transparent !important;
+		padding: 0rem !important;
+		transition: all 0.4s ease-in-out !important;
+		border: unset !important;
+		&:hover,
+		&:focus {
+			background-color: transparent !important;
+			color: $primary !important;
+		}
+	}
+}

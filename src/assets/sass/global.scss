@@ -1,0 +1,77 @@
+@use 'variables';
+@use 'media-queries';
+
+@import 'typography';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: variables.$family-sans-serif;
+	background-color: variables.$white-light;
+	color: variables.$black;
+	font-size: 16px;
+	@include media-queries.mediumDevices {
+		font-size: 14px;
+	}
+}
+
+footer {
+	background-color: variables.$primary;
+	padding: 1rem;
+	color: variables.$white;
+	.row {
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+}
+
+.button {
+	cursor: pointer;
+	justify-content: center;
+	padding: 1rem 2rem;
+	text-align: center;
+	white-space: nowrap;
+	font-size: 1.125rem;
+	margin: 1rem 0;
+}
+
+a {
+	text-decoration: none;
+	color: variables.$black;
+	cursor: pointer;
+
+	&:visited,
+	:active {
+		color: unset;
+	}
+}
+
+section {
+	padding: variables.$section-padding;
+}
+
+.container {
+	margin: 0 auto;
+	@include media-queries.smallDevices {
+		max-width: variables.$container-small;
+	}
+	@include media-queries.mediumDevices {
+		max-width: variables.$container-medium;
+	}
+	@include media-queries.LargeDevices {
+		max-width: variables.$container-large;
+	}
+	@include media-queries.extraLargeDevices {
+		max-width: variables.$container-extra-large;
+	}
+}
